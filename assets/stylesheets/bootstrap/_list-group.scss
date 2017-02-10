@@ -13,28 +13,29 @@
   padding-left: 0; // reset padding because ul and ol
 }
 
-
+.selector-chooser{
+    @extend .list-group
+}
 // Individual list items
 //
 // Use on `li`s or `div`s within the `.list-group` parent.
-
 .list-group-item {
-  position: relative;
-  display: block;
-  padding: 10px 15px;
-  // Place the border on the list items and negative margin up for better styling
-  margin-bottom: -1px;
-  background-color: $list-group-bg;
-  border: 1px solid $list-group-border;
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+    // Place the border on the list items and negative margin up for better styling
+    margin-bottom: -1px;
+    background-color: $list-group-bg;
+    border: 1px solid $list-group-border;
+    // Round the first and last items
+    &:first-child {
+        @include border-top-radius($list-group-border-radius);
+    }
 
-  // Round the first and last items
-  &:first-child {
-    @include border-top-radius($list-group-border-radius);
-  }
-  &:last-child {
-    margin-bottom: 0;
-    @include border-bottom-radius($list-group-border-radius);
-  }
+    &:last-child {
+        margin-bottom: 0;
+        @include border-bottom-radius($list-group-border-radius);
+    }
 }
 
 
@@ -42,22 +43,20 @@
 //
 // Use anchor or button elements instead of `li`s or `div`s to create interactive items.
 // Includes an extra `.active` modifier class for showing selected items.
-
 a.list-group-item,
 button.list-group-item {
-  color: $list-group-link-color;
+    color: $list-group-link-color;
 
-  .list-group-item-heading {
-    color: $list-group-link-heading-color;
-  }
-
-  // Hover state
-  &:hover,
-  &:focus {
-    text-decoration: none;
-    color: $list-group-link-hover-color;
-    background-color: $list-group-hover-bg;
-  }
+    .list-group-item-heading {
+        color: $list-group-link-heading-color;
+    }
+    // Hover state
+    &:hover,
+    &:focus {
+        text-decoration: none;
+        color: $list-group-link-hover-color;
+        background-color: $list-group-hover-bg;
+    }
 }
 
 button.list-group-item {

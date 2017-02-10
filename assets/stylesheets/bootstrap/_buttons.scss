@@ -144,13 +144,37 @@ a.btn {
   @include button-size($padding-xs-vertical, $padding-xs-horizontal, $font-size-small, $line-height-small, $btn-border-radius-small);
 }
 
+.selector-chooseall{
+    @extend .btn-xs, .btn, .btn-default
+}
 
+.selector-clearall {
+    @extend .btn-xs, .btn, .btn-default
+
+}
+
+.selector-chooser li {
+    @extend .btn-xs, .btn, .btn-default;
+    display: table-caption;
+}
+
+.selector-chooser li:first-child{
+    margin-top: 5px;
+}
+
+.selector-available h2 {
+    font-size: 16px;
+}
+
+.selector-chosen h2 {
+    font-size: 16px;
+    margin-top: 0px;
+}
 // Block button
 // --------------------------------------------------
-
 .btn-block {
-  display: block;
-  width: 100%;
+    display: block;
+    width: 100%;
 }
 
 // Vertically space out multiple block buttons
