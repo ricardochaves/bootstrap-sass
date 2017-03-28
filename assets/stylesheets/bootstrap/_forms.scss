@@ -438,6 +438,14 @@ input[type="checkbox"] {
   @include form-control-validation($state-danger-text, $state-danger-text, $state-danger-bg);
 }
 
+.has-error .errorlist {
+    list-style-type: none;
+    padding-left: 0px;
+    color: red;
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
 // Reposition feedback icon if input has visible label above
 .has-feedback label {
 
